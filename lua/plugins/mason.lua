@@ -1,4 +1,9 @@
 return {
     "mason-org/mason.nvim",
-    opts = {}
+    opts = {
+        registries = {
+            "github:mason-org/mason-registry",
+            "github:crashdummyy/mason-registry", -- Roslyn server
+        }
+    }
 }

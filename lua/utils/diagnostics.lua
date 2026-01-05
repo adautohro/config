@@ -2,7 +2,7 @@ local M = {}
 
 local diagnostic_signs = {
     Error = '',
-    Warn = '',
+    Warn = '',
     Hint = '',
     Info = '',
 }
@@ -17,12 +17,10 @@ M.setup = function()
                 [vim.diagnostic.severity.INFO] = diagnostic_signs.Info,
             }
         },
-
-    --     float = {
-    --         border = 'rounded',
-    --         max_width = 50,
-    --         max_height = 50,
-    --     }
+        virtual_text = false,
+        virtual_lines = {
+            current_line = true,
+        },
     })
 end
 

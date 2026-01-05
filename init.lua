@@ -1,6 +1,6 @@
 local opt = vim.opt
 local keymap = vim.keymap.set
-
+local default_colorscheme = 'vague'
 local tabsize = 4
 
 -- Disable Netrw
@@ -28,6 +28,8 @@ opt.softtabstop = tabsize -- Soft tab stop
 opt.shiftwidth = tabsize  -- Indent width
 
 -- Visual options
+opt.signcolumn = 'yes'
+opt.winborder = 'rounded'
 opt.cursorline = true               -- Highlight cursor line
 opt.showmode = false                -- Show modal mode in status line
 opt.showmatch = true                -- Highlight matching brackets
@@ -47,17 +49,18 @@ keymap("n", "<leader>ol", ":Lazy <CR>", { desc = "Open Lazy" })
 keymap("n", "<leader>om", ":Mason <CR>", { desc = "Open Mason" })
 
 -- Neotree
-keymap('n', '<leader>e', ':Neotree toggle filesystem reveal left<CR>', { desc = 'Open Nvim-Tree', silent = true })
+keymap('n', '<leader>e', function()
+    MiniFiles.open(vim.api.nvim_buf_get_name(0))
+end, { desc = 'Open MiniFiles', silent = true })
 
 -- Telescope
-keymap("n", "<leader>ff", ":Telescope fd<CR>", { desc = "Telescope fuzzy find" })
-keymap("n", "<leader>fk", ":Telescope keymaps<CR>", { desc = "Telescope find keymaps" })
-keymap('n', '<leader>fb', ':Telescope buffers<CR>', { desc = 'Telescope find buffers' })
-keymap('n', '<leader>ft', ':Telescope colorscheme<CR>', { desc = 'Telescope colorschemes' })
-keymap('n', '<leader>fg', ':Telescope live_grep<CR>', { desc = 'Telescope live_grep' })
+keymap("n", "<leader>ff", ":Pick files<CR>", { desc = "Pick files", silent = true })
+keymap('n', '<leader>fb', ':Pick buffers<CR>', { desc = 'Pick buffers', silent = true })
+keymap('n', '<leader>fg', ':Pick grep_live<CR>', { desc = 'Pick grep', silent = true })
+keymap('n', '<leader>fh', ':Pick help<CR>', { desc = 'Pick help', silent = true })
 
 -- Oil
-keymap('n', '<leader>oo', ':Oil --float<CR>', {desc = 'Open Oil', silent = true})
+keymap('n', '<leader>oo', ':Oil --float<CR>', { desc = 'Open Oil', silent = true })
 
 -- Open config file
 keymap("n", "<leader>rc", ":e ~/.config/nvim/init.lua<CR>", { desc = "Open config file" })
@@ -116,8 +119,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
     vim.lsp.handlers.hover, {
         border = 'rounded',
-        max_width = 50,
-        max_height = 30,
     }
 )
 
@@ -125,8 +126,9 @@ require('config.lazy')
 require('utils.diagnostics').setup()
 
 -- Theme
-vim.cmd.colorscheme("gruvbox-material")
+vim.cmd.colorscheme(default_colorscheme)
 
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('jdtls')
 vim.lsp.enable('lemminx')
+vim.lsp.enable('omnisharp')

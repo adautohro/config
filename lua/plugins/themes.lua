@@ -11,26 +11,15 @@ return {
     },
 
     {
-        'sainnhe/everforest',
-        lazy = false,
-        priority = 1000,
+        "vague-theme/vague.nvim",
+        lazy = false, -- make sure we load this during startup if it is your main colorscheme
+        priority = 1000, -- make sure to load this before all the other plugins
         config = function()
-            -- Optionally configure and load the colorscheme
-            -- directly inside the plugin declaration.
-            vim.g.everforest_enable_italic = true
+            -- NOTE: you do not need to call setup if you don't want to.
+            require("vague").setup({
+                -- optional configuration here
+                transparent = true,
+            })
         end
     },
-
-    {
-        'rebelot/kanagawa.nvim',
-        lazy = false,
-        priority = 1000,
-    },
-
-    {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
-    }
 }
