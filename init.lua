@@ -104,19 +104,6 @@ keymap("v", "<S-A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 keymap('v', '<', '<gv', { desc = 'Indent selection right' })
 keymap('v', '>', '>gv', { desc = 'Indent selection left' })
 
--- Highlight yanked selection
-local highlight_yank_group = vim.api.nvim_create_augroup("HighlightYank", {})
-vim.api.nvim_create_autocmd("TextYankPost", {
-    group = highlight_yank_group,
-    pattern = "*",
-    callback = function()
-        vim.hl.on_yank({
-            higroup = "IncSearch",
-            timeout = 200,
-        })
-    end,
-})
-
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
     vim.lsp.handlers.hover, {
         border = 'rounded',
@@ -124,6 +111,12 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
 )
 
 require('config.lazy')
+require('utils.autocmds')
+local fterminal = require('utils.fterminal')
+keymap('n', '<leader>ot', function ()
+    fterminal.create_terminal()
+end, { desc = 'Open float terminal'} )
+
 require('utils.diagnostics').setup()
 
 -- Theme
