@@ -12,7 +12,7 @@ opt.number = true
 opt.relativenumber = true
 
 -- Search options
-opt.hlsearch = false  -- Highlight search matches
+opt.hlsearch = true  -- Highlight search matches
 opt.incsearch = true  -- Highlight match while typing search
 opt.ignorecase = true -- Search insensitive case
 opt.smartcase = true  -- Switch to sensitive case if type uppercase letter in search
@@ -51,7 +51,7 @@ keymap("n", "<leader>om", ":Mason <CR>", { desc = "Open Mason", silent = true })
 -- File explorer
 keymap('n', '<leader>e', function()
     MiniFiles.open(vim.api.nvim_buf_get_name(0))
-end, { desc = 'Open MiniFiles', silent = true })
+end, { desc = 'Open File Explorer', silent = true })
 
 -- Fuzzy finder
 keymap("n", "<leader>ff", ":Pick files<CR>", { desc = "Pick files", silent = true })
