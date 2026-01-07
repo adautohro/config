@@ -45,22 +45,19 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Plugins
-keymap("n", "<leader>ol", ":Lazy <CR>", { desc = "Open Lazy" })
-keymap("n", "<leader>om", ":Mason <CR>", { desc = "Open Mason" })
+keymap("n", "<leader>ol", ":Lazy <CR>", { desc = "Open Lazy", silent = true })
+keymap("n", "<leader>om", ":Mason <CR>", { desc = "Open Mason", silent = true })
 
--- Neotree
+-- File explorer
 keymap('n', '<leader>e', function()
     MiniFiles.open(vim.api.nvim_buf_get_name(0))
 end, { desc = 'Open MiniFiles', silent = true })
 
--- Telescope
+-- Fuzzy finder
 keymap("n", "<leader>ff", ":Pick files<CR>", { desc = "Pick files", silent = true })
 keymap('n', '<leader>fb', ':Pick buffers<CR>', { desc = 'Pick buffers', silent = true })
 keymap('n', '<leader>fg', ':Pick grep_live<CR>', { desc = 'Pick grep', silent = true })
 keymap('n', '<leader>fh', ':Pick help<CR>', { desc = 'Pick help', silent = true })
-
--- Oil
-keymap('n', '<leader>oo', ':Oil --float<CR>', { desc = 'Open Oil', silent = true })
 
 -- Open config file
 keymap("n", "<leader>rc", ":e ~/.config/nvim/init.lua<CR>", { desc = "Open config file" })
@@ -73,11 +70,15 @@ keymap('n', '<leader>bn', ':bnext<CR>', { desc = 'Next buffer' })
 keymap('n', '<leader>bp', ':bprevious<CR>', { desc = 'Previous buffer' })
 
 -- Improve tab navigation
-keymap("n", "<leader>tn", ":tabnew<CR>", { desc = "Open new tab" })
+keymap("n", "<leader>tn", ":<C-w>T", { desc = "Open current file in tab" })
 keymap("n", "<leader>tx", ":tabclose<CR>", { desc = "Close tab" })
 keymap("n", "<A-Right>", "gt", { desc = "Move to tab right" })
 keymap("n", "<A-Left>", "gT", { desc = "Move to tab left" })
 keymap('n', '<leader>ta', ':tabonly<CR>', { desc = 'Close all other tabs' })
+
+-- Improve page navigation
+keymap('n', '<C-d>', '<C-d>zz', { desc = 'Half page down' })
+keymap('n', '<C-u', '<C-u>zz', { desc = 'Half page up'})
 
 -- Improve window navigation
 keymap("n", "<A-h>", "<C-w>h", { desc = "Switch to left window" })
@@ -86,8 +87,8 @@ keymap("n", "<A-k>", "<C-w>k", { desc = "Switch to up window" })
 keymap("n", "<A-l>", "<C-w>l", { desc = "Switch to right window" })
 
 -- Split and resize window
-keymap("n", "<leader>sh", ":split<CR>", { desc = "Split horizontally" })
-keymap("n", "<leader>sv", ":vsplit<CR>", { desc = "Split vertically" })
+keymap("n", "<leader>S", ":split<CR>", { desc = "Split horizontally" })
+keymap("n", "<leader>s", ":vsplit<CR>", { desc = "Split vertically" })
 keymap("n", "<C-Up>", ":resize +2 <CR>", { desc = "Increase window height" })
 keymap("n", "<C-Down>", ":resize -2<CR>", { desc = "Decrease window height" })
 keymap("n", "<C-Left>", ":vertical resize +2<CR>", { desc = "Increase window width" })
