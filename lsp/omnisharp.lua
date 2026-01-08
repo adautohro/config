@@ -12,6 +12,7 @@
 ---
 ---
 
+-- local util = require('lspconfig.util')
 
 ---@type vim.lsp.Config
 return {
@@ -36,7 +37,8 @@ return {
   --       or util.root_pattern 'function.json'(fname)
   --   )
   -- end,
-  -- init_options = {},
+  root_markers = {{'.slxn', '.sln', '.csproj'}, '.git'},
+  init_options = {},
   capabilities = {
     workspace = {
       workspaceFolders = false, -- https://github.com/OmniSharp/omnisharp-roslyn/issues/909
@@ -49,7 +51,7 @@ return {
       EnableEditorConfigSupport = true,
       -- Specifies whether 'using' directives should be grouped and sorted during
       -- document formatting.
-      OrganizeImports = nil,
+      OrganizeImports = true,
     },
     MsBuild = {
       -- If true, MSBuild project system will only load projects for files that
@@ -62,19 +64,19 @@ return {
     },
     RoslynExtensionsOptions = {
       -- Enables support for roslyn analyzers, code fixes and rulesets.
-      EnableAnalyzersSupport = nil,
+      EnableAnalyzersSupport = true,
       -- Enables support for showing unimported types and unimported extension
       -- methods in completion lists. When committed, the appropriate using
       -- directive will be added at the top of the current file. This option can
       -- have a negative impact on initial completion responsiveness,
       -- particularly for the first few completion sessions after opening a
       -- solution.
-      EnableImportCompletion = nil,
+      EnableImportCompletion = true,
       -- Only run analyzers against open files when 'enableRoslynAnalyzers' is
       -- true
       AnalyzeOpenDocumentsOnly = nil,
       -- Enables the possibility to see the code in external nuget dependencies
-      EnableDecompilationSupport = nil,
+      EnableDecompilationSupport = true,
     },
     RenameOptions = {
       RenameInComments = nil,

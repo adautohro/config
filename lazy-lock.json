@@ -3,9 +3,8 @@
   "friendly-snippets": { "branch": "main", "commit": "572f5660cf05f8cd8834e096d7b4c921ba18e175" },
   "gruvbox-material": { "branch": "master", "commit": "e4359a2f80ef7275b080be180841c62ca8322757" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
-  "mason.nvim": { "branch": "main", "commit": "57e5a8addb8c71fb063ee4acda466c7cf6ad2800" },
-  "mini.nvim": { "branch": "main", "commit": "fb4ccfed03c1f0d9db702f93a65cb4c0c6c2832b" },
-  "nvim-treesitter": { "branch": "main", "commit": "b033ab331ca0bccbd93c3c2b4f886fdfc09abec0" },
-  "roslyn.nvim": { "branch": "main", "commit": "2b9a8366a29b0a2a7e51cac87f3ca6345f617790" },
+  "mason.nvim": { "branch": "main", "commit": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65" },
+  "mini.nvim": { "branch": "main", "commit": "29b9e13f891f9c83f44ff5bf44d22daa1af1dc71" },
+  "nvim-treesitter": { "branch": "main", "commit": "2ba5ec184609a96b513bf4c53a20512d64e27f39" },
   "vague.nvim": { "branch": "main", "commit": "fcc283576764474ccfbbcca240797d5d7f4d8a78" }
 }
