@@ -1,6 +1,6 @@
 local opt = vim.opt
 local keymap = vim.keymap.set
-local default_colorscheme = 'vague'
+local default_colorscheme = 'kanso-zen'
 local tabsize = 4
 
 -- Disable Netrw
@@ -12,7 +12,7 @@ opt.number = true
 opt.relativenumber = true
 
 -- Search options
-opt.hlsearch = true  -- Highlight search matches
+opt.hlsearch = true   -- Highlight search matches
 opt.incsearch = true  -- Highlight match while typing search
 opt.ignorecase = true -- Search insensitive case
 opt.smartcase = true  -- Switch to sensitive case if type uppercase letter in search
@@ -50,8 +50,8 @@ keymap("n", "<leader>om", ":Mason <CR>", { desc = "Open Mason", silent = true })
 
 -- File explorer
 keymap('n', '<leader>e', function()
-    MiniFiles.open(vim.api.nvim_buf_get_name(0))
-end, { desc = 'Open File Explorer', silent = true })
+    if not MiniFiles.close() then MiniFiles.open(vim.api.nvim_buf_get_name(0)) end
+end, { desc = 'Toggle File Explorer', silent = true })
 
 -- Fuzzy finder
 keymap("n", "<leader>ff", ":Pick files<CR>", { desc = "Pick files", silent = true })
@@ -78,7 +78,7 @@ keymap('n', '<leader>ta', ':tabonly<CR>', { desc = 'Close all other tabs' })
 
 -- Improve page navigation
 keymap('n', '<C-d>', '<C-d>zz', { desc = 'Half page down' })
-keymap('n', '<C-u', '<C-u>zz', { desc = 'Half page up'})
+keymap('n', '<C-u', '<C-u>zz', { desc = 'Half page up' })
 
 -- Improve window navigation
 keymap("n", "<A-h>", "<C-w>h", { desc = "Switch to left window" })
@@ -113,9 +113,9 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
 require('config.lazy')
 require('utils.autocmds')
 local fterminal = require('utils.fterminal')
-keymap('n', '<leader>ot', function ()
+keymap('n', '<leader>ot', function()
     fterminal.create_terminal()
-end, { desc = 'Open float terminal'} )
+end, { desc = 'Open float terminal' })
 
 require('utils.diagnostics').setup()
 
