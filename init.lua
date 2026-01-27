@@ -64,13 +64,19 @@ keymap("n", "<leader>rc", ":e ~/.config/nvim/init.lua<CR>", { desc = "Open confi
 
 -- Lsp format
 keymap('n', '<leader>lf', ':lua vim.lsp.buf.format()<CR>', { silent = true, desc = 'Lsp format' })
+keymap('n', '<leader>ld', function()
+    vim.diagnostic.setloclist()
+end, { desc = 'Open current buffer diagnostics' })
+keymap('n', '<leader>lD', function()
+    vim.diagnostic.setqflist()
+end, { desc = 'Open all workspace diagnostics' })
 
 -- Buffers
 keymap('n', '<leader>bn', ':bnext<CR>', { desc = 'Next buffer' })
 keymap('n', '<leader>bp', ':bprevious<CR>', { desc = 'Previous buffer' })
 
 -- Improve tab navigation
-keymap("n", "<leader>tn", ":<C-w>T", { desc = "Open current file in tab" })
+keymap("n", "<leader>tn", "<C-w>T", { desc = "Open current file in tab" })
 keymap("n", "<leader>tx", ":tabclose<CR>", { desc = "Close tab" })
 keymap("n", "<A-Right>", "gt", { desc = "Move to tab right" })
 keymap("n", "<A-Left>", "gT", { desc = "Move to tab left" })
