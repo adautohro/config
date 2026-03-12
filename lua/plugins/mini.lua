@@ -7,6 +7,7 @@ return {
         require('mini.pick').setup()
         require('mini.diff').setup()
         require('mini.git').setup()
+        require('mini.extra').setup()
         local miniclue = require('mini.clue')
         miniclue.setup({
             triggers = {

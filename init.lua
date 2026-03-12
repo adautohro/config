@@ -58,9 +58,15 @@ keymap("n", "<leader>ff", ":Pick files<CR>", { desc = "Pick files", silent = tru
 keymap('n', '<leader>fb', ':Pick buffers<CR>', { desc = 'Pick buffers', silent = true })
 keymap('n', '<leader>fg', ':Pick grep_live<CR>', { desc = 'Pick grep', silent = true })
 keymap('n', '<leader>fh', ':Pick help<CR>', { desc = 'Pick help', silent = true })
+keymap('n', '<leader>fl', ':Pick buf_lines<CR>', { desc = 'Pick line', silent = true })
+keymap('n', '<leader>ft', ':Pick colorschemes<CR>', { desc = 'Pick colorschemes', silent = true })
+keymap('n', '<leader>fk', ':Pick keymaps<CR>', { desc = 'Pick keymaps', silent = true })
+keymap('n', '<leader>fc', ':Pick git_commits<CR>', { desc = 'Pick git commits', silent = true })
+keymap('n', '<leader>fd', ':Pick diagnostic<CR>', { desc = 'Pick diagnostic', silent = true })
 
 -- Open config file
 keymap("n", "<leader>rc", ":e ~/.config/nvim/init.lua<CR>", { desc = "Open config file" })
+keymap("n", "<leader>rs", ":source<CR>", { desc = "Source config" })
 
 -- Lsp format
 keymap('n', '<leader>lf', ':lua vim.lsp.buf.format()<CR>', { silent = true, desc = 'Lsp format' })
