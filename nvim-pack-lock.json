@@ -1,0 +1,24 @@
+{
+  "plugins": {
+    "blink.cmp": {
+      "rev": "c573a15a62bd0bfd4006ee0849b24f5404395500",
+      "src": "https://github.com/saghen/blink.cmp"
+    },
+    "kanso.nvim": {
+      "rev": "1afbbb449aa0254823dbe1932e3cbb51886ff9fe",
+      "src": "https://github.com/webhooked/kanso.nvim"
+    },
+    "mason.nvim": {
+      "rev": "b03fb0f20bc1d43daf558cda981a2be22e73ac42",
+      "src": "https://github.com/mason-org/mason.nvim"
+    },
+    "mini.nvim": {
+      "rev": "29447d7b0e1fc9bc9d0384953e63be3fae816736",
+      "src": "https://github.com/nvim-mini/mini.nvim"
+    },
+    "vague.nvim": {
+      "rev": "8751181a1aa431b4e8983b0a183afef5cbc08381",
+      "src": "https://github.com/vague-theme/vague.nvim"
+    }
+  }
+}

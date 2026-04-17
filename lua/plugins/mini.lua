@@ -1,56 +1,55 @@
-return {
-    'nvim-mini/mini.nvim',
-    version = false,
-    config = function()
-        require('mini.icons').setup()
-        require('mini.files').setup()
-        require('mini.pick').setup()
-        require('mini.diff').setup()
-        require('mini.git').setup()
-        require('mini.extra').setup()
-        local miniclue = require('mini.clue')
-        miniclue.setup({
-            triggers = {
-                -- Leader triggers
-                { mode = { 'n', 'x' }, keys = '<Leader>' },
+require('mini.icons').setup()
+require('mini.files').setup()
+require('mini.pick').setup()
+require('mini.diff').setup({
+    view = {
+        style = 'number',
+    }
+})
+require('mini.git').setup()
+require('mini.extra').setup()
+require('mini.statusline').setup()
 
-                -- `[` and `]` keys
-                { mode = 'n',          keys = '[' },
-                { mode = 'n',          keys = ']' },
+local miniclue = require('mini.clue')
+miniclue.setup({
+    triggers = {
+        -- Leader triggers
+        { mode = { 'n', 'x' }, keys = '<Leader>' },
 
-                -- Built-in completion
-                { mode = 'i',          keys = '<C-x>' },
+        -- `[` and `]` keys
+        { mode = 'n',          keys = '[' },
+        { mode = 'n',          keys = ']' },
 
-                -- `g` key
-                { mode = { 'n', 'x' }, keys = 'g' },
+        -- Built-in completion
+        { mode = 'i',          keys = '<C-x>' },
 
-                -- Marks
-                { mode = { 'n', 'x' }, keys = "'" },
-                { mode = { 'n', 'x' }, keys = '`' },
+        -- `g` key
+        { mode = { 'n', 'x' }, keys = 'g' },
 
-                -- Registers
-                { mode = { 'n', 'x' }, keys = '"' },
-                { mode = { 'i', 'c' }, keys = '<C-r>' },
+        -- Marks
+        { mode = { 'n', 'x' }, keys = "'" },
+        { mode = { 'n', 'x' }, keys = '`' },
 
-                -- Window commands
-                { mode = 'n',          keys = '<C-w>' },
+        -- Registers
+        { mode = { 'n', 'x' }, keys = '"' },
+        { mode = { 'i', 'c' }, keys = '<C-r>' },
 
-                -- `z` key
-                { mode = { 'n', 'x' }, keys = 'z' },
-            },
+        -- Window commands
+        { mode = 'n',          keys = '<C-w>' },
 
-            clues = {
-                -- Enhance this by adding descriptions for <Leader> mapping groups
-                miniclue.gen_clues.square_brackets(),
-                miniclue.gen_clues.builtin_completion(),
-                miniclue.gen_clues.g(),
-                miniclue.gen_clues.marks(),
-                miniclue.gen_clues.registers(),
-                miniclue.gen_clues.windows(),
-                miniclue.gen_clues.z(),
-            },
+        -- `z` key
+        { mode = { 'n', 'x' }, keys = 'z' },
+    },
 
-        })
-        require('mini.statusline').setup()
-    end,
-}
+    clues = {
+        -- Enhance this by adding descriptions for <Leader> mapping groups
+        miniclue.gen_clues.square_brackets(),
+        miniclue.gen_clues.builtin_completion(),
+        miniclue.gen_clues.g(),
+        miniclue.gen_clues.marks(),
+        miniclue.gen_clues.registers(),
+        miniclue.gen_clues.windows(),
+        miniclue.gen_clues.z(),
+    },
+
+})
