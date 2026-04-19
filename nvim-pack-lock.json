@@ -16,6 +16,10 @@
       "rev": "29447d7b0e1fc9bc9d0384953e63be3fae816736",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
+    "nordic.nvim": {
+      "rev": "9f757428264ef1fcd1703e17702d3a28f307a2f7",
+      "src": "https://github.com/AlexvZyl/nordic.nvim"
+    },
     "vague.nvim": {
       "rev": "8751181a1aa431b4e8983b0a183afef5cbc08381",
       "src": "https://github.com/vague-theme/vague.nvim"
