@@ -47,7 +47,7 @@ local function get_jdtls_jvm_args()
         local arg = string.format('--jvm-arg=%s', a)
         table.insert(args, arg)
     end
-    return unpack(args)
+    return table.unpack(args)
 end
 
 local root_markers1 = {

@@ -4,6 +4,10 @@
       "rev": "c573a15a62bd0bfd4006ee0849b24f5404395500",
       "src": "https://github.com/saghen/blink.cmp"
     },
+    "gruvbox-material": {
+      "rev": "11d779b26a9ab2b3db8c22c6ac9fb6e8ed4fea79",
+      "src": "https://github.com/sainnhe/gruvbox-material"
+    },
     "kanso.nvim": {
       "rev": "1afbbb449aa0254823dbe1932e3cbb51886ff9fe",
       "src": "https://github.com/webhooked/kanso.nvim"
@@ -16,9 +20,13 @@
       "rev": "29447d7b0e1fc9bc9d0384953e63be3fae816736",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
-    "nordic.nvim": {
-      "rev": "9f757428264ef1fcd1703e17702d3a28f307a2f7",
-      "src": "https://github.com/AlexvZyl/nordic.nvim"
+    "nightfox.nvim": {
+      "rev": "ba47d4b4c5ec308718641ba7402c143836f35aa9",
+      "src": "https://github.com/edeneast/nightfox.nvim"
+    },
+    "sonokai": {
+      "rev": "b023c5280b16fe2366f5e779d8d2756b3e5ee9c3",
+      "src": "https://github.com/sainnhe/sonokai"
     },
     "vague.nvim": {
       "rev": "8751181a1aa431b4e8983b0a183afef5cbc08381",

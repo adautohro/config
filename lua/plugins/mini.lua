@@ -1,6 +1,7 @@
 require('mini.icons').setup()
 require('mini.files').setup()
 require('mini.pick').setup()
+require('mini.pairs').setup()
 require('mini.diff').setup({
     view = {
         style = 'number',
@@ -15,6 +16,9 @@ miniclue.setup({
     triggers = {
         -- Leader triggers
         { mode = { 'n', 'x' }, keys = '<Leader>' },
+        { mode = { 'n', 'x' }, keys = 'c' },
+        { mode = { 'n', 'x' }, keys = 'd' },
+        { mode = { 'n', 'x' }, keys = 'y' },
 
         -- `[` and `]` keys
         { mode = 'n',          keys = '[' },
