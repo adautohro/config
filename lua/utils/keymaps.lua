@@ -8,19 +8,36 @@ keymap('n', '<leader>e', function()
 end, { desc = 'Toggle File Explorer', silent = true })
 
 -- Fuzzy finder
+keymap("n", "<leader>pf", function()
+    Snacks.picker.files()
+end, { desc = "Pick files", silent = true })
+
+keymap("n", "<leader>ps", function()
+    Snacks.picker.lsp_symbols({fallback = 'treesitter'})
+end, { desc = "Pick files", silent = true })
+
 keymap("n", "<leader>ff", ":Pick files<CR>", { desc = "Pick files", silent = true })
 keymap('n', '<leader>fb', ':Pick buffers<CR>', { desc = 'Pick buffers', silent = true })
-keymap('n', '<leader>fg', ':Pick grep_live<CR>', { desc = 'Pick grep', silent = true })
+keymap('n', '<leader>fgh', ':Pick git_hunks<CR>', { desc = 'Pick git hunks', silent = true })
+keymap('n', '<leader>fgc', ':Pick git_commits<CR>', { desc = 'Pick git commits', silent = true })
 keymap('n', '<leader>fh', ':Pick help<CR>', { desc = 'Pick help', silent = true })
 keymap('n', '<leader>fl', ':Pick buf_lines<CR>', { desc = 'Pick line', silent = true })
 keymap('n', '<leader>ft', ':Pick colorschemes<CR>', { desc = 'Pick colorschemes', silent = true })
 keymap('n', '<leader>fk', ':Pick keymaps<CR>', { desc = 'Pick keymaps', silent = true })
 keymap('n', '<leader>fc', ':Pick git_commits<CR>', { desc = 'Pick git commits', silent = true })
 keymap('n', '<leader>fd', ':Pick diagnostic<CR>', { desc = 'Pick diagnostic', silent = true })
+keymap('n', '<leader>fm', ':Pick manpages<CR>', { desc = 'Pick manpages', silent = true })
+keymap('n', '<leader>fs',":Pick lsp scope='document_symbol'<CR>" , { desc = 'Pick workspace lsp simbols', silent = true })
+keymap('n', '<leader>fS',":Pick lsp scope='workspace_symbol'<CR>" , { desc = 'Pick workspace lsp simbols', silent = true })
 
 -- Open config file
 keymap("n", "<leader>rc", ":e ~/.config/nvim/init.lua<CR>", { desc = "Open config file" })
 keymap("n", "<leader>rs", ":source<CR>", { desc = "Source config" })
+
+-- Snacks
+keymap('n', '<leader>z', function()
+    Snacks.zen.zen()
+end, { desc = 'Toggle zen mode', silent = true })
 
 -- Lsp format
 keymap('n', '<leader>lf', ':lua vim.lsp.buf.format()<CR>', { silent = true, desc = 'Lsp format' })

@@ -1,7 +1,29 @@
 require('mini.icons').setup()
 require('mini.files').setup()
-require('mini.pick').setup()
+local win_config = function()
+    local height = math.floor(0.618 * vim.o.lines)
+    local width = math.floor(0.618 * vim.o.columns)
+    return {
+        border = 'rounded',
+        anchor = 'NW',
+        height = height,
+        width = width,
+        row = math.floor(0.5 * (vim.o.lines - height)),
+        col = math.floor(0.5 * (vim.o.columns - width)),
+    }
+end
+
+
+require('mini.pick').setup({
+    mappings = {
+        scroll_down = '<C-d>',
+        delete_left = '<C-f>',
+        scroll_up = '<C-u>',
+    },
+    window = { config = win_config },
+})
 require('mini.pairs').setup()
+require('mini.indentscope').setup()
 require('mini.diff').setup({
     view = {
         style = 'number',
@@ -16,6 +38,7 @@ miniclue.setup({
     triggers = {
         -- Leader triggers
         { mode = { 'n', 'x' }, keys = '<Leader>' },
+
         { mode = { 'n', 'x' }, keys = 'c' },
         { mode = { 'n', 'x' }, keys = 'd' },
         { mode = { 'n', 'x' }, keys = 'y' },

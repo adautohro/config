@@ -45,7 +45,7 @@ opt.wildmode = "longest:full,full"  -- Autocomplete options in command line
 opt.clipboard:append("unnamedplus") -- Use clipboard of system
 
 -- Completion
-opt.completeopt = 'noselect,nosort,menuone,popup,fuzzy'
+opt.completeopt = 'fuzzy,menuone,popup,noinsert'
 
 -- Keymaps
 vim.g.mapleader = " "

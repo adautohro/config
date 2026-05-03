@@ -52,9 +52,9 @@ end
 
 local root_markers1 = {
     -- Multi-module projects
-    'mvnw',              -- Maven
-    'gradlew',           -- Gradle
-    'settings.gradle',   -- Gradle
+    'mvnw',                -- Maven
+    'gradlew',             -- Gradle
+    'settings.gradle',     -- Gradle
     'settings.gradle.kts', -- Gradle
     -- Use git directory as last resort for multi-module maven projects
     -- In multi-module maven projects it is not really possible to determine what is the parent directory
@@ -64,9 +64,9 @@ local root_markers1 = {
 }
 local root_markers2 = {
     -- Single-module projects
-    'build.xml',      -- Ant
-    'pom.xml',        -- Maven
-    'build.gradle',   -- Gradle
+    'build.xml',        -- Ant
+    'pom.xml',          -- Maven
+    'build.gradle',     -- Gradle
     'build.gradle.kts', -- Gradle
 }
 
