@@ -1,5 +1,7 @@
 require('mini.icons').setup()
 require('mini.files').setup()
+
+-- Center Picker window
 local win_config = function()
     local height = math.floor(0.618 * vim.o.lines)
     local width = math.floor(0.618 * vim.o.columns)
@@ -15,11 +17,6 @@ end
 
 
 require('mini.pick').setup({
-    mappings = {
-        scroll_down = '<C-d>',
-        delete_left = '<C-f>',
-        scroll_up = '<C-u>',
-    },
     window = { config = win_config },
 })
 require('mini.pairs').setup()
@@ -78,5 +75,12 @@ miniclue.setup({
         miniclue.gen_clues.windows(),
         miniclue.gen_clues.z(),
     },
+
+    window = {
+        config = {
+            width = 'auto',
+            border = 'rounded',
+        }
+    }
 
 })

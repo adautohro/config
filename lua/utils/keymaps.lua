@@ -20,6 +20,7 @@ keymap("n", "<leader>fp", function()
     Snacks.picker.projects()
 end, { desc = "Pick projects", silent = true })
 
+keymap("n", "<leader>fe", ":Pick explorer<CR>", { desc = "Pick explorer", silent = true })
 keymap("n", "<leader>ff", ":Pick files<CR>", { desc = "Pick files", silent = true })
 keymap('n', '<leader>fb', ':Pick buffers<CR>', { desc = 'Pick buffers', silent = true })
 keymap('n', '<leader>fgh', ':Pick git_hunks<CR>', { desc = 'Pick git hunks', silent = true })
@@ -31,8 +32,8 @@ keymap('n', '<leader>fk', ':Pick keymaps<CR>', { desc = 'Pick keymaps', silent =
 keymap('n', '<leader>fc', ':Pick git_commits<CR>', { desc = 'Pick git commits', silent = true })
 keymap('n', '<leader>fd', ':Pick diagnostic<CR>', { desc = 'Pick diagnostic', silent = true })
 keymap('n', '<leader>fm', ':Pick manpages<CR>', { desc = 'Pick manpages', silent = true })
-keymap('n', '<leader>fs',":Pick lsp scope='document_symbol'<CR>" , { desc = 'Pick workspace lsp simbols', silent = true })
-keymap('n', '<leader>fS',":Pick lsp scope='workspace_symbol'<CR>" , { desc = 'Pick document lsp simbols', silent = true })
+keymap('n', '<leader>fs',":Pick lsp scope='document_symbol'<CR>" , { desc = 'Pick document lsp simbols', silent = true })
+keymap('n', '<leader>fS',":Pick lsp scope='workspace_symbol'<CR>" , { desc = 'Pick workspace lsp simbols', silent = true })
 
 -- Open config file
 keymap("n", "<leader>rc", ":e ~/.config/nvim/init.lua<CR>", { desc = "Open config file" })
