@@ -19,6 +19,8 @@ require('hardtime').setup()
 require('plugins.mini')
 require('plugins.snacks')
 
+vim.cmd('packadd nvim.undotree')
+
 vim.g.sonokai_style = 'maia'                   -- 'shusia' 'andromeda' 'espresso' 'default'
 vim.g.gruvbox_material_foreground = 'material' -- 'mix' 'original'
 vim.g.gruvbox_material_background = 'hard'     -- 'medium' 'soft'
